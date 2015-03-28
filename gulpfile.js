@@ -7,13 +7,42 @@ gulp.task("umd", function() {
 	return gulp.src("src/js/*")
 		.pipe(umd({
 			dependencies: function(file) {
-				return [];
+				return [
+					{
+						name: "Knockout",
+						amd: "knockout",
+						cjs: "knockout",
+						global: "ko",
+						param: "ko"
+					},
+					{
+						name: "Knockout Mapping",
+						amd: "knockout-mapping",
+						cjs: "knockout-mapping",
+						global: "ko",
+						param: "mapping"
+					},
+					{
+						name: "jQuery",
+						amd: "jquery",
+						cjs: "jquery",
+						global: "$",
+						param: "jQuery"
+					},
+					{
+						name: "Underscore",
+						amd: "underscore",
+						cjs: "underscore",
+						global: "_",
+						param: "_"
+					}
+				];
 			},
 			exports: function(file) {
-				return 'Library';
+				return 'ko';
 			},
 			namespace: function(file) {
-				return 'Library';
+				return 'ko';
 			}
 		}))
 		.pipe(gulp.dest("dist"));
