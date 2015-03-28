@@ -7,7 +7,7 @@
     root.ko = factory(root.ko, root.ko, root.$, root._);
   }
 }(this, function(ko, mapping, jQuery, _) {
-+(function($, ko){
++(function($, _, ko){
     ko.mapping = ko.mapping || mapping;
 
     var ChangeSubscriber = function ChangeSubscriber(callback, comparisonProperty)
@@ -111,6 +111,6 @@
 
     ko.subscribable.fn.changeSubscriber = ChangeSubscriber;
 
-})(jQuery, ko);
+})(jQuery, _, ko);
 return ko;
 }));

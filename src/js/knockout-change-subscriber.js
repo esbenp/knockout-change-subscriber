@@ -1,4 +1,4 @@
-+(function($, ko){
++(function($, _, ko){
     ko.mapping = ko.mapping || mapping;
 
     var ChangeSubscriber = function ChangeSubscriber(callback, comparisonProperty)
@@ -102,4 +102,4 @@
 
     ko.subscribable.fn.changeSubscriber = ChangeSubscriber;
 
-})(jQuery, ko);
+})(jQuery, _, ko);
